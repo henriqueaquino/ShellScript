@@ -1,0 +1,9 @@
+LoadModule  cgid_module /usr/lib/apache2/modules/mod_cgid.so
+
+ScriptAlias "/cgi-bin/" "/var/www/myApp/"
+
+<Directory "/var/www/myApp/">
+	Options +ExecCGI
+	AddHandler cgi-script .cgi .py
+	Require all granted
+</Directory>
